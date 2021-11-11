@@ -1,11 +1,11 @@
 {
   "s3": {
     "stage": {
-      "bucket": "stage-apps.npr.org",
+      "bucket": "interactive-stage.wbez.org",
       "path": "{%= app_name %}"
     },
     "live": {
-      "bucket": "apps.npr.org",
+      "bucket": "interactive.wbez.org",
       "path": "{%= app_name %}"
     }
   },

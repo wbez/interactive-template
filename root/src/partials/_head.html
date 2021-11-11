@@ -1,13 +1,45 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title><%= project.title %> : NPR</title>
+<title><%= t.renderMarkdown(grunt.data.archieml.story.seo) %></title>
+
+<!-- Google Analytics-->
+<!-- https://docs.google.com/document/d/1B8bukp25X839WUu5FDe_5sI0wvX585HODF8jfB3UpOc/edit#heading=h.qevdm63qqtno -->
+<script>
+  dataLayer = [{
+  "dl_PageType" : "Story", //can also be collection, topic, etc
+  "dl_StoryID" : "interactiveYYYYMMDD", //unique story id, can made up by date
+  "dl_Byline" : "<%= t.renderMarkdown(grunt.data.archieml.story.byline) %>", //byline of the story
+  "dl_Editor" : "<%= t.renderMarkdown(grunt.data.archieml.story.editor) %>", //editor of the story
+  "dl_NewsDesk" : "", // or check out other options below
+  "dl_ShowName" : "", //wbez-news 
+  "dl_PublishTime" : "YYYYMMDDHHMM", 
+  "dl_Topics" : "Chicago", // or check out other options below
+  "dl_Keywords" : "tag,tag,tag",
+  "dl_StoryType" : "Explainer/Reader service", //or check out other options below
+  "dl_WordCount" : "500", //total word count of the story, if not a story then 0 
+  "dl_AudioCount" : "0", //total number of audio in the story, if not a story then 0 
+  "dl_ImageCount" : "0" //total number of images in the story, if not a story then 0 
+  }];
+</script>
+  
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl+ '&gtm_auth=nTRrIzfvLh_W-fQiVZQWOQ&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N5LZXP4');</script>
+<!-- End Google Tag Manager -->
+  
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 <!-- Favicon -->
-<link rel="apple-touch-icon" sizes="180x180" href="https://media.npr.org/templates/favicon/favicon-180x180.png" />
-<link rel="icon" sizes="96x96" href="https://media.npr.org/templates/favicon/favicon-96x96.png" />
-<link rel="icon" sizes="32x32" href="https://media.npr.org/templates/favicon/favicon-32x32.png" />
-<link rel="icon" sizes="16x16" href="https://media.npr.org/templates/favicon/favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://ferris-ds.wbez.org/logos/wbez-square.png" />
+<link rel="icon" sizes="96x96" href="https://ferris-ds.wbez.org/logos/wbez-square.png" />
+<link rel="icon" sizes="32x32" href="https://ferris-ds.wbez.org/logos/wbez-square.png" />
+<link rel="icon" sizes="16x16" href="https://ferris-ds.wbez.org/logos/wbez-square.png" />
 
 <!-- Safari, you're the worst -->
 <meta name='format-detection' content='telephone=no'>
@@ -18,58 +50,25 @@
 
 <!-- BEGIN TWITTER SUMMARY CARD -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="<%= project.title %>">
-<meta name="twitter:site" content="@nprviz">
+<meta name="twitter:title" content="<%= t.renderMarkdown(grunt.data.archieml.story.display) %>">
+<meta name="twitter:site" content="@wbez">
 <meta name="twitter:url" content="<%= project.url %>">
 <meta name="twitter:image" content="<%= project.url + project.image %>">
-<meta name="twitter:description" content="<%= project.description %>">
+<meta name="twitter:description" content="<%= t.renderMarkdown(grunt.data.archieml.story.teaser) %>">
 
 <!-- Social sharing meta -->
 <meta property="og:type" content="article">
-<meta property="og:title" content="<%= project.title %>">
-<meta property="og:site_name" content="NPR Visuals">
+<meta property="og:title" content="<%= t.renderMarkdown(grunt.data.archieml.story.title) %>">
+<meta property="og:site_name" content="WBEZ">
 <meta property="og:url" content="<%= project.url %>">
 <meta property="og:image" content="<%= project.url + project.image %>">
 <meta property="og:description" content="<%= project.description %>">
 
 <!-- Facebook-specific meta -->
-<meta property="fb:app_id" content="138837436154588">
-<meta property="article:opinion" content="false">
-<meta property="article:content_tier" content="free">
-<meta property="fb:pages" content="10643211755">
-
-<!-- Google structured data -->
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "NewsArticle",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "<%= project.url %>"
-  },
-  "headline": "<%= project.title %>",
-  "image": {
-    "@type": "ImageObject",
-    "url": "<%= project.url + project.image %>"
-  },
-  "author": {
-    "@type": "Person",
-    "name": "NPR Staff"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "NPR",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "<%= project.url %>assets/logo.png",
-      "width": 2176,
-      "height": 725
-    }
-  },
-  "description": "<%= project.description %>",
-  "datePublished": "<%= new Date().toISOString() %>"
-}
-</script>
+<!-- meta property="fb:app_id" content="138837436154588" -->
+<!-- meta property="article:opinion" content="false" -->
+<!-- meta property="article:content_tier" content="free" -->
+<!-- meta property="fb:pages" content="10643211755" -->
 
 <!-- Chartbeat top -->
 <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
@@ -78,5 +77,6 @@
 // if !project.embedded...
 } 
 %>
+
 
 <%= t.include("partials/_webfonts.html") %>

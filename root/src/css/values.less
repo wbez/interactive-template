@@ -7,59 +7,57 @@
 @landscape: ~"(min-aspect-ratio: 1 / 1)";
 
 // Colors
-@accent-dark: #4774CC;
-@accent-light: #bccae5;
+@grey-dark: #636466;
+@grey-light: #dcddde;
+@black: #000000;
+@white: #ffffff;
 
-@rigorous: #d62021;
-@unbiased: #000005;
-@true: #237bbd;
+@red: #ed0000;
+@purple: #5f2b7b;
+@teal: #048282;
 
 // Fonts
-@gotham: 'Gotham SSm', Helvetica, Arial, sans-serif;
-@knockout: 'Knockout 31 4r','Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-@sans: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+@sans: 'Source Sans Pro', 'Arial', sans-serif;
 @serif: Georgia, "Times New Roman", Times, serif;
 
 // Export values to CSS custom properties
 :root {
-  --accent-dark: @accent-dark;
-  --accent-light: @accent-light;
-  --rigorous: @rigorous;
-  --unbiased: @unbiased;
-  --true: @true;
-  --gotham: @gotham;
-  --knockout: @knockout;
+  --grey-dark: @grey-dark;
+  --grey-light: @grey-light;
+  --black: @black;
+  --white: @white;
+  --red: @red;
+  --purple: @purple;
+  --teal: @teal;
   --sans: @sans;
   --serif: @serif;
   --vh: 1vh;
 }
 
 // Font mixins
-.gotham() {
-  font-family: @gotham;
+.sans() {
+  font-family: @sans;
   font-weight: normal;
   font-weight: 400;
 }
 
-// Normal Knockout
-.knockout() {
-  font-family: @knockout;
-  font-weight: normal;
-}
-
-// Knockout, uppercased
-.knockout-upper() {
-  .knockout();
+// Source Sans Pro, uppercased
+.sans-upper() {
+  .sans();
   text-transform: uppercase;
 }
 
-// Knockout for headings
-.knockout-header() {
-  .knockout-upper();
+// Source Sans Pro for headings
+.sans-header() {
+  .sans-upper();
   letter-spacing: 0.05em;
   -webkit-font-smoothing: antialiased;
 }
 
+.serif() {
+  font-family: @serif;
+  font-weight: normal;
+}
 
 // a11y
 .sr-only {
