@@ -23,23 +23,29 @@ body {
   line-height: 1.4;
 }
 
+.story-app {
+  padding-top: 100px;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
 img, svg {
   max-width: 100%;
 }
 
 h1 {
   .sans();
-  font-size: 20px;
   color: @grey-dark;
 }
 
-a, a:visited {
+/* Remove for now
+a:not(.top-nav-el, .t-headline), a:visited:not(.top-nav-el) {
   color: @teal;
   text-decoration: none;
   border-bottom: 1px dotted;
 }
 
-a:hover, a:active, a:focus {
+a:hover:not(.top-nav-el), a:active:not(.top-nav-el), a:focus:not(.top-nav-el) {
   color: @teal;
   text-decoration: none;
   border-bottom: 1px solid;
@@ -53,6 +59,7 @@ img:not([alt]) {
     outline: none;
   }
 }
+*/
 
 /* NPR standard partials */
 
