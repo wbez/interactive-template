@@ -1,22 +1,56 @@
 <!doctype html>
 <html lang="en-US">
-  <head>
+
+<head>
     <%= t.include("partials/_head.html", grunt.data.json) %>
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+</head>
 
-  <body>
+<body>
     <!--Header-->
+    <div class='navigation'>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" style="background-color:#000;" role="navigation">
+            <button class="navbar-toggler" id='toggle' type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
+            <a class="navbar-brand top-nav-el" href="https://www.wbez.org/" target=_blank>
+                <img class="header-logo" height='25' src="assets/logos/logo.png" alt="logo">
+            </a>
+
+            <a id='twitter-share' class='social-button top-nav-el' href="https://twitter.com/intent/tweet" target=_blank>
+                <img class='icon' width='16' src='assets/icons/twitter.svg' name='Twitter' alt='Twitter'>
+            </a>
+
+            <a id='fb-share' class='social-button top-nav-el' target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Finteractive.wbez.org%2Fwaterdebt%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">
+                <img class='icon' width='16' src='assets/icons/facebook.svg' name='Facebook' alt='Facebook'>
+            </a>
+
+            <a id='donate-button' class='top-nav-el' href='https://donate.wbez.org/' target=_blank>
+                <img class='icon' width='16' src='assets/icons/heart.svg' name='Donate' alt='Donate'>
+            </a>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <!--
+                <li class="nav-item active">
+                  <a class="nav-link" href="#" id='intro-nav'>Introduction <span class="sr-only">(current)</span></a>
+                </li>
+                -->
+                </ul>
+            </div>
+        </nav>
+    </div>
 
     <!-- Story / app -->
 
     <script src="app.js" async></script>
     <%= t.include("partials/_analytics.html") %>
 
-    <!-- Bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+        <!-- Bootstrap -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
 </html>
